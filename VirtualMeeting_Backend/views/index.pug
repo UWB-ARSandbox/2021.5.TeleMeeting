@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  block upload
+    form(action='/rooms/submit', method='POST' enctype='multipart/form-data')
+      input(type='text', name='title', value='' placeholder="Title...")
+      br
+      br
+      textarea(name='description', value='' placeholder="Description...")
+      br
+      br
+      input(type='text', name='creator', value='' placeholder="Creator...")
+      br
+      p Image:
+      input(type='file', name='image', value='')
+      br
+      p Room Data:
+      input(type='file', name='room_data', value='')
+      br
+      br
+      input(type='submit', value='Submit')
